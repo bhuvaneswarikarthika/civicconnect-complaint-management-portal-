@@ -1,0 +1,6 @@
+{
+  "name": "CivicConnect - Citizen Civic Issue & Complaint Management Portal",
+  "description": "Empowering citizens to report, track, and resolve local civic issues—from road potholes and garbage to streetlights and drainage—in partnership with municipal departments.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
