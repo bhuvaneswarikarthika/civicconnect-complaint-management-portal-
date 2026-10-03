@@ -13,7 +13,7 @@ export const AdminSettingsPage: React.FC = () => {
   const [slaHours, setSlaHours] = useState('48');
   const [copied, setCopied] = useState(false);
 
-  const sampleUri = 'mongodb+srv://bhuvaneswarikarthika51_db_user:karthika11@cluster0.m23arlw.mongodb.net/civicconnect?retryWrites=true&w=majority&appName=Cluster0';
+  const sampleUri = 'mongodb+srv://<db_user>:<db_password>@cluster0.example.mongodb.net/civicconnect?retryWrites=true&w=majority';
 
   const handleCopyUri = () => {
     navigator.clipboard.writeText(`MONGODB_URI="${sampleUri}"`);

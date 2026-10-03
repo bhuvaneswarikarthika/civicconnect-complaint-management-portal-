@@ -10,18 +10,18 @@ dotenv.config();
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3000', 10);
-const DEFAULT_MONGODB_URI = 'mongodb+srv://bhuvaneswarikarthika51_db_user:karthika11@cluster0.m23arlw.mongodb.net/civicconnect?retryWrites=true&w=majority&appName=Cluster0';
+const DEFAULT_MONGODB_URI = '';
 
 // Fixed Admin credentials configured on server side (never exposed in frontend plain text)
 const ADMIN_USERNAME = (process.env.ADMIN_USERNAME || 'admin').toLowerCase().trim();
 const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || 'commissioner@civicconnect.gov.in').toLowerCase().trim();
 const ADMIN_PASSWORD = (process.env.ADMIN_PASSWORD || 'admin@civic2026').trim();
 
-// If process.env.MONGODB_URI is not a full mongodb string (e.g. only password was passed), fallback to valid full URI
+// Read MongoDB URI strictly from environment variables
 const rawUri = (process.env.MONGODB_URI || '').trim().replace(/^["']|["']$/g, '');
 const MONGODB_URI = (rawUri.startsWith('mongodb://') || rawUri.startsWith('mongodb+srv://'))
   ? rawUri
-  : DEFAULT_MONGODB_URI;
+  : '';
 
 app.use(express.json({ limit: '10mb' }));
 
